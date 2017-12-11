@@ -6,7 +6,11 @@ This API is a RESTful Cat API. It exists so you can create virtual cats and retr
 
 ## Getting Started
 
-To get started using this application, familiarity with node and npm, as well as git is assumed. Fork/clone this repo to your machine, and do an npm install. You will need to set up a .env file with the PORT you would like to use (i.e. PORT=3000). To this file you should also add a STORAGE_PATH variable set to the path to the root folder/db.json. Run 'npm start' from the command line to start the server.
+To get started using this application, familiarity with node and npm, as well as git is assumed. Fork/clone this repo to your machine, and do an `npm install`. You will need to set up a .env file (saved in the root directory of this project) with the PORT you would like to use (i.e. PORT=3000). To this file you should also add a STORAGE_PATH variable set to the path to `<absolute path to the root folder of this project on your machine>/db.json`.
+
+ Example: `STORAGE_PATH=/Users/Andrew/cf/401/labs/08-09-vanilla-rest-server/lab-andrew/db.json`
+
+  Install jest if you do not have it globally installed with `npm i jest`. Run `npm start` from the command line to start the server, after which, requests can be made manually to the server. Alternately, to run the tests type `npm run test`.
 
 ## Modules
 
@@ -14,8 +18,8 @@ There is an index.js file which simply requires in the server file runs server.s
 
 ## Making Requests to the API
 
- To make a GET request, the path will be '__server_address__/api/cats' and an array of all cat objects will be returned with a success message. If an additional cat ID is supplied as a query string, a specific cat will be returned if that ID exists. A POST request can be made, which expects a JSON object in the form of '{"name":"<cat's name>","says":"<what the cat says>"}' and a new Cat will be created with a unique ID and a birthday (which calls the Date() method to document the time the Cat was created). A DELETE request can be made with the same route as a GET request with an ID; it will delete the cat which has that ID.
+ To make a GET request, the path will be '__server_address__/api/cats', e.g. 'http://localhost:3000/api/cats', and an array of all cat objects will be returned with a success message. If an additional cat ID is supplied as a query string, a specific cat will be returned if that ID exists. A POST request can be made, which expects a JSON object in the form of '{"name":"`<cat's name>`","says":"`<what the cat says>`"}' and a new Cat will be created with a unique ID and a birthday (which calls the Date() method to document the time the Cat was created). A DELETE request can be made with the same route as a GET request with an ID; it will delete the cat which has that ID.
 
 ## Technology/Credits
 
-This app is being logged with winston and is using superagent and jest for testing server requests. This app is using fs-extra to read and write JSON for persisting storage between sessions.
+Created by Andrew Bloom. This app is being logged with winston and is using superagent and jest for testing server requests. This app is using fs-extra to read and write JSON for persisting storage between sessions.
